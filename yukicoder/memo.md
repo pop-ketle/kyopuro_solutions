@@ -87,7 +87,7 @@
             nocheater.remove(p)
   ```
   
-- [No.954 Result](difficulty2.0/no.954.py)  
+- [No.954 Result](difficulty2.0/no954.py)  
   メモ化再帰でフィボナッチ数列作成
 
 
