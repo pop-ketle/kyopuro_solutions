@@ -1,12 +1,36 @@
-# kyopuro_solutions
-- yukicoder
-- (leetcode)
-- (Project Euler)
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="orgmode_styles/bigblow/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="orgmode_styles/bigblow/css/bigblow.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="orgmode_styles/bigblow/css/hideshow.css"/>
 
-なんかの解いた問題をあげていきます。  
-現状はyukicoderのみ。  
-AtCoderはProblemsが便利なのでgithubにはあげない予定。  
+#+HTML_HEAD: <script type="text/javascript" src="orgmode_styles/bigblow/js/jquery-1.11.0.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="orgmode_styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
 
-基本はPyhonで解くつもり  
-各フォルダ下のmemo.mdで問題の感想・解法・学んだことをメモ。
-- [yukicode/memo.md](yukicoder/memo.md)
+#+HTML_HEAD: <script type="text/javascript" src="orgmode_styles/bigblow/js/jquery.localscroll-min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="orgmode_styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="orgmode_styles/bigblow/js/jquery.zclip.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="orgmode_styles/bigblow/js/bigblow.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="orgmode_styles/bigblow/js/hideshow.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="orgmode_styles/lib/js/jquery.stickytableheaders.min.js"></script>
+
+#+TITLE: kyopuro_solutions
+#+AUTHOR: pop-ketle
+
+#+STARTUP: indent
+
+#+OPTIONS: \n:t
+#+OPTIONS: ^:{}  # アンダースコアで下付きを無効化
+
+* TOP
+** 紹介
+- [[https://pop-ketle.github.io/kyopuro_solutions/README.html][ビュアー ]] 最終更新日 <2020-07-28 Tue>
+- 競プロ関連で解いた問題に関する解法やメモをまとめるつもりです。現状はyukicoderのみ。
+- AtCoderはProblemsが便利なのでとりあえずgithubにはあげない予定。
+- 基本はPythonで解いていくつもりです。
+
+
+- この素敵なテーマ(bigblow、readtheorg)はこちらのサイトの方から借りています。[[http://www.pirilampo.org/]]
+
+* [[./yukicoder/memo.html][yukicoder]]
+- [[./yukicoder/memo.html][yukicoder]]
+* (leetcode)
+* (Project Euler)

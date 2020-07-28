@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2020-07-28 Tue 14:51 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>yukicoder</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="pop-ketle" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="../orgmode_styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="../orgmode_styles/readtheorg/css/readtheorg.css"/>
+<script type="text/javascript" src="../orgmode_styles/lib/js/jquery.min.js"></script>
+<script type="text/javascript" src="../orgmode_styles/lib/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../orgmode_styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="../orgmode_styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">yukicoder</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org0ad25e4">1. difficulty1.5</a>
+<ul>
+<li><a href="#org3203d79">1.1. No.882 約数倍数</a></li>
+<li><a href="#org3aa3e13">1.2. No.888 約数の総和</a></li>
+<li><a href="#org9eeaa9e">1.3. No.889 素数!</a></li>
+</ul>
+</li>
+<li><a href="#orgc1b000d">2. difficulty2.0</a>
+<ul>
+<li><a href="#orga271f0f">2.1. No.3 ビットすごろく</a></li>
+<li><a href="#org507231e">2.2. No.7 プライムナンバーゲーム</a></li>
+<li><a href="#orgc499bef">2.3. No.8  N言っちゃダメゲーム</a></li>
+<li><a href="#org094cb48">2.4. No.11 カードマッチ</a></li>
+<li><a href="#org4de0a58">2.5. No.16 累乗の加算</a></li>
+<li><a href="#org469c840">2.6. No.36 素数が嫌い！</a></li>
+<li><a href="#orgc1c8113">2.7. No.39 桁の数字を入れ替え</a></li>
+<li><a href="#org8fdb920">2.8. No.44 DPなすごろく</a></li>
+<li><a href="#orgc610a69">2.9. No.45 回転寿司</a></li>
+<li><a href="#org6e58f50">2.10. No.52 よくある文字列の問題</a></li>
+<li><a href="#org42fb300">2.11. No.71 そろばん</a></li>
+<li><a href="#orge3ee99e">2.12. No.675 テトラナッチ数列 Easy</a></li>
+<li><a href="#org7d7623e">2.13. No.786 京都大学の過去問</a></li>
+<li><a href="#orgc39453b">2.14. No.938 賢人を探せ</a></li>
+<li><a href="#org89e1aed">2.15. No.4 おもりと天秤</a></li>
+</ul>
+</li>
+<li><a href="#org24e1d93">3. difficulty2.5</a>
+<ul>
+<li><a href="#org6d38a81">3.1. No.4 おもりと天秤</a></li>
+</ul>
+</li>
+<li><a href="#orgd01612b">4. difficulty3.0</a></li>
+</ul>
+</div>
+</div>
+<ul class="org-ul">
+<li>最終更新日 <span class="timestamp-wrapper"><span class="timestamp">&lt;2020-07-28 Tue&gt;</span></span><br /></li>
+</ul>
+
+<p>
+問題の解法・学んだことのメモを書きます。<br />
+</p>
+
+<div id="outline-container-org0ad25e4" class="outline-2">
+<h2 id="org0ad25e4"><span class="section-number-2">1</span> difficulty1.5</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org3203d79" class="outline-3">
+<h3 id="org3203d79"><span class="section-number-3">1.1</span> <a href="./difficulty1.5/no882.py">No.882 約数倍数</a></h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+期間が空いたのでうろ覚えだが約数列挙かな<br />
+制約が緩いので愚直にできそう<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3aa3e13" class="outline-3">
+<h3 id="org3aa3e13"><span class="section-number-3">1.2</span> <a href="./difficulty1.5/no888.py">No.888 約数の総和</a></h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+約数を列挙して総和をだす<br />
+1≤i≤N じゃなくて 1≤i≤√Nで良いぞってやつ<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9eeaa9e" class="outline-3">
+<h3 id="org9eeaa9e"><span class="section-number-3">1.3</span> <a href="./difficulty1.5/no889.py">No.889 素数!</a></h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+素数、平方数、立方数、完全数かをチェックする<br />
+制約が緩いので手動列挙して解いたが制約がきつくなった時にどうすべきかは考えておいても良いかも<br />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgc1b000d" class="outline-2">
+<h2 id="orgc1b000d"><span class="section-number-2">2</span> difficulty2.0</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-orga271f0f" class="outline-3">
+<h3 id="orga271f0f"><span class="section-number-3">2.1</span> <a href="./difficulty2.0/no3.py">No.3 ビットすごろく</a></h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+すごろく最短解探索 幅優先探索<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org507231e" class="outline-3">
+<h3 id="org507231e"><span class="section-number-3">2.2</span> <a href="./difficulty2.0/no7.py">No.7 プライムナンバーゲーム</a></h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+エラストテネスなんかで素数列挙しておいてからdpで勝敗を決める<br />
+素数列挙とgrundy数を組み合わせた良問<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc499bef" class="outline-3">
+<h3 id="orgc499bef"><span class="section-number-3">2.3</span> <a href="./difficulty2.0/no8.py">No.8  N言っちゃダメゲーム</a></h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+n-1を言えば勝てるゲーム<br />
+ゲームの存在は知っていたが必勝法を忘れてて思いつかなかったので(じゃあダメじゃん(はい&#x2026;))、LayCurseさんの[yukicoder No.8 - N言っちゃダメゲーム](<a href="http://rsujskf.s602.xrea.com/?yukicoder_8">http://rsujskf.s602.xrea.com/?yukicoder_8</a>)<br />
+&gt;「また，相手が何を言おうと，K+1 から相手が言った整数を引いた数をいうことができる．つまり，N−1−(K+1) を言えば，勝てる．と続けていくと，N mod (K+1) が 1 の時のみ後手必勝」<br />
+</p>
+
+<p>
+をみて解いた記憶がある 問題文にも書いてあるけど知識ゲー感<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org094cb48" class="outline-3">
+<h3 id="org094cb48"><span class="section-number-3">2.4</span> <a href="./difficulty2.0/no11.py">No.11 カードマッチ</a></h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+包除原理を使った問題 数学<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4de0a58" class="outline-3">
+<h3 id="org4de0a58"><span class="section-number-3">2.5</span> <a href="./difficulty2.0/no16.py">No.16 累乗の加算</a></h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+x^10000000的なめっちゃ乗算する問題  <br />
+解くだけだと思ったがx**iのような乗算方法だと計算時間を食いTLEするらしい<br />
+繰り返し二乗法なるものがあるらしいがPythonにおいてはpow()を使えば良いっぽい<br />
+余談だがpow()ってmodも取れるのね<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org469c840" class="outline-3">
+<h3 id="org469c840"><span class="section-number-3">2.6</span> <a href="./difficulty2.0/no36.py">No.36 素数が嫌い！</a></h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+素因数分解して素数,1,使う数自身」以外で割り切れる整数かどうかを判定する<br />
+エラストテンネスで素数列挙しようとしたらMLEした<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc1c8113" class="outline-3">
+<h3 id="orgc1c8113"><span class="section-number-3">2.7</span> <a href="./difficulty2.0/no39.py">No.39 桁の数字を入れ替え</a></h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+制約が緩いので全パターンを列挙して条件に合うもので最大のものを出力するだけ<br />
+itertoolsがすごいと、最初一番上の桁だけ入れ替えるプログラムを書いてWA出したのが反省点<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8fdb920" class="outline-3">
+<h3 id="org8fdb920"><span class="section-number-3">2.8</span> <a href="./difficulty2.0/no44.py">No.44 DPなすごろく</a></h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+dp典型 特に難しくなさそう<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc610a69" class="outline-3">
+<h3 id="orgc610a69"><span class="section-number-3">2.9</span> <a href="./difficulty2.0/no45.py">No.45 回転寿司</a></h3>
+<div class="outline-text-3" id="text-2-9">
+<p>
+dp 続けて取れないので下のようになる<br />
+</p>
+<pre class="example">
+dp[i]=max(dp[i-2]+V[i],dp[i-1])
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org6e58f50" class="outline-3">
+<h3 id="org6e58f50"><span class="section-number-3">2.10</span> <a href="./difficulty2.0/no52.py">No.52 よくある文字列の問題</a></h3>
+<div class="outline-text-3" id="text-2-10">
+<p>
+簡単そうに見えたけど意外と手間取った<br />
+bit全探索使って全パターンを作成してsetに入れて長さを取ればok<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org42fb300" class="outline-3">
+<h3 id="org42fb300"><span class="section-number-3">2.11</span> <a href="./difficulty2.0/no71.py">No.71 そろばん</a></h3>
+<div class="outline-text-3" id="text-2-11">
+<p>
+全探索して探す問題 そんなに難しくない<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge3ee99e" class="outline-3">
+<h3 id="orge3ee99e"><span class="section-number-3">2.12</span> <a href="./difficulty2.0/no675.py">No.675 テトラナッチ数列 Easy</a></h3>
+<div class="outline-text-3" id="text-2-12">
+<p>
+メモ化再帰でするっと解ける 典型<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7d7623e" class="outline-3">
+<h3 id="org7d7623e"><span class="section-number-3">2.13</span> <a href="./difficulty2.0/no786.py">No.786 京都大学の過去問</a></h3>
+<div class="outline-text-3" id="text-2-13">
+<p>
+1段もしくは2段飛ばしのdp典型<br />
+ところでこれ本当に京都大学の過去問なんですか？<br />
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc39453b" class="outline-3">
+<h3 id="orgc39453b"><span class="section-number-3">2.14</span> <a href="./difficulty2.0/no938.py">No.938 賢人を探せ</a></h3>
+<div class="outline-text-3" id="text-2-14">
+<p>
+setとか使ってカンニングしていない人リストを作成する<br />
+余談だが、出力の際に整列をさせる必要があり上だとTLEする<br />
+下の方が in を使ってる分遅そうな気がするが&#x2026;<br />
+多分remove()を使って要素が削除されるにつれ早くなるようにしているのだろう<br />
+このやり方は覚えておいて損がないかもしれない<br />
+</p>
+<pre class="example">
+# nocheater=sorted(set(nocheater),key=person.index)
+# print(*nocheater,sep="\n")
+
+for p in person:
+    if p in nocheater:
+        print(p)
+        nocheater.remove(p)
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org89e1aed" class="outline-3">
+<h3 id="org89e1aed"><span class="section-number-3">2.15</span> <a href="./difficulty2.0/no954.py">No.4 おもりと天秤</a></h3>
+<div class="outline-text-3" id="text-2-15">
+<p>
+メモ化再帰でフィボナッチ数列作成<br />
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org24e1d93" class="outline-2">
+<h2 id="org24e1d93"><span class="section-number-2">3</span> difficulty2.5</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org6d38a81" class="outline-3">
+<h3 id="org6d38a81"><span class="section-number-3">3.1</span> <a href="./difficulty2.5/no4.py">No.4 おもりと天秤</a></h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+dp 期間が空いたので正直覚えてないがREを連発している<br />
+コードを見る感じlist out of index関係っぽい？<br />
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd01612b" class="outline-2">
+<h2 id="orgd01612b"><span class="section-number-2">4</span> difficulty3.0</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: pop-ketle</p>
+<p class="date">Created: 2020-07-28 Tue 14:51</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

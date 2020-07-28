@@ -1,83 +1,99 @@
-問題の解法・学んだことのメモを書きます
-(やっぱりorg-modeで書きたいんですが...←)
-ということで後でorg-modeで書き直すかも
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../orgmode_styles/readtheorg/css/htmlize.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="../orgmode_styles/readtheorg/css/readtheorg.css"/>
 
-# difficulty1.5
-- [No.882 約数倍数](difficulty1.5/no882.py)  
+#+HTML_HEAD: <script type="text/javascript" src="../orgmode_styles/lib/js/jquery.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="../orgmode_styles/lib/js/bootstrap.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="../orgmode_styles/lib/js/jquery.stickytableheaders.min.js"></script>
+#+HTML_HEAD: <script type="text/javascript" src="../orgmode_styles/readtheorg/js/readtheorg.js"></script>
+
+#+TITLE: yukicoder
+#+AUTHOR: pop-ketle
+
+#+STARTUP: indent
+
+#+OPTIONS: \n:t
+#+OPTIONS: ^:{}  # アンダースコアで下付きを無効化
+
+- 最終更新日 <2020-07-28 Tue>
+
+問題の解法・学んだことのメモを書きます。
+
+* difficulty1.5
+** [[./difficulty1.5/no882.py][No.882 約数倍数]]
   期間が空いたのでうろ覚えだが約数列挙かな  
   制約が緩いので愚直にできそう  
 
-- [No.888 約数の総和](difficulty1.5/no888.py)  
+** [[./difficulty1.5/no888.py][No.888 約数の総和]]
   約数を列挙して総和をだす  
   1≤i≤N じゃなくて 1≤i≤√Nで良いぞってやつ
 
-- [No.889 素数!](difficulty1.5/no889.py)  
+** [[./difficulty1.5/no889.py][No.889 素数!]]
   素数、平方数、立方数、完全数かをチェックする  
   制約が緩いので手動列挙して解いたが制約がきつくなった時にどうすべきかは考えておいても良いかも
 
 
-# difficulty2.0
-- [No.3 ビットすごろく](difficulty2.0/no3.py)  
+* difficulty2.0
+** [[./difficulty2.0/no3.py][No.3 ビットすごろく]]
   すごろく最短解探索 幅優先探索
 
-- [No.7 プライムナンバーゲーム](difficulty2.0/no7.py)  
+** [[./difficulty2.0/no7.py][No.7 プライムナンバーゲーム]]
   エラストテネスなんかで素数列挙しておいてからdpで勝敗を決める  
   素数列挙とgrundy数を組み合わせた良問
 
-- [No.8  N言っちゃダメゲーム](difficulty2.0/no8.py)  
+** [[./difficulty2.0/no8.py][No.8  N言っちゃダメゲーム]]
   n-1を言えば勝てるゲーム  
   ゲームの存在は知っていたが必勝法を忘れてて思いつかなかったので(じゃあダメじゃん(はい...))、LayCurseさんの[yukicoder No.8 - N言っちゃダメゲーム](http://rsujskf.s602.xrea.com/?yukicoder_8)  
   >「また，相手が何を言おうと，K+1 から相手が言った整数を引いた数をいうことができる．つまり，N−1−(K+1) を言えば，勝てる．と続けていくと，N mod (K+1) が 1 の時のみ後手必勝」
 
   をみて解いた記憶がある 問題文にも書いてあるけど知識ゲー感
 
-- [No.11 カードマッチ](difficulty2.0/no11.py)  
+** [[./difficulty2.0/no11.py][No.11 カードマッチ]]
   包除原理を使った問題 数学
 
-- [No.16 累乗の加算]((difficulty2.0/no16.py)   
+** [[./difficulty2.0/no16.py][No.16 累乗の加算]]
   x^10000000的なめっちゃ乗算する問題  
   解くだけだと思ったがx**iのような乗算方法だと計算時間を食いTLEするらしい  
   繰り返し二乗法なるものがあるらしいがPythonにおいてはpow()を使えば良いっぽい  
   余談だがpow()ってmodも取れるのね
 
-- [No.36 素数が嫌い！](difficulty2.0/no36.py)  
+** [[./difficulty2.0/no36.py][No.36 素数が嫌い！]]
   素因数分解して素数,1,使う数自身」以外で割り切れる整数かどうかを判定する
   エラストテンネスで素数列挙しようとしたらMLEした
 
-- [No.39 桁の数字を入れ替え](difficulty2.0/no39.py)  
+** [[./difficulty2.0/no39.py][No.39 桁の数字を入れ替え]]
   制約が緩いので全パターンを列挙して条件に合うもので最大のものを出力するだけ  
   itertoolsがすごいと、最初一番上の桁だけ入れ替えるプログラムを書いてWA出したのが反省点  
 
-- [No.44 DPなすごろく](difficulty2.0/no44.py)  
+** [[./difficulty2.0/no44.py][No.44 DPなすごろく]]
   dp典型 特に難しくなさそう  
 
-- [No.45 回転寿司](difficulty2.0/no45.py)  
+** [[./difficulty2.0/no45.py][No.45 回転寿司]]
   dp 続けて取れないので下のようになる  
-  ```Python
+  #+BEGIN_SRC
   dp[i]=max(dp[i-2]+V[i],dp[i-1])
-  ```
+  #+END_SRC
 
-- [No.52 よくある文字列の問題](difficulty2.0/no52.py)  
+** [[./difficulty2.0/no52.py][No.52 よくある文字列の問題]]
   簡単そうに見えたけど意外と手間取った
   bit全探索使って全パターンを作成してsetに入れて長さを取ればok  
 
-- [No.71 そろばん](difficulty2.0/no71.py)  
+** [[./difficulty2.0/no71.py][No.71 そろばん]]
   全探索して探す問題 そんなに難しくない
 
-- [No.675 テトラナッチ数列 Easy](difficulty2.0/no675.py)  
+** [[./difficulty2.0/no675.py][No.675 テトラナッチ数列 Easy]]
   メモ化再帰でするっと解ける 典型
 
-- [No.786 京都大学の過去問](difficulty2.0/no786.py)  
+** [[./difficulty2.0/no786.py][No.786 京都大学の過去問]]
   1段もしくは2段飛ばしのdp典型  
   ところでこれ本当に京都大学の過去問なんですか？
 
-- [No.938 賢人を探せ](difficulty2.0/no938.py)  
+** [[./difficulty2.0/no938.py][No.938 賢人を探せ]]
   setとか使ってカンニングしていない人リストを作成する  
   余談だが、出力の際に整列をさせる必要があり上だとTLEする  
   下の方が in を使ってる分遅そうな気がするが...  
   多分remove()を使って要素が削除されるにつれ早くなるようにしているのだろう  
   このやり方は覚えておいて損がないかもしれない
-  ```Python
+  #+BEGIN_SRC
     # nocheater=sorted(set(nocheater),key=person.index)
     # print(*nocheater,sep="\n")
 
@@ -85,15 +101,15 @@
         if p in nocheater:
             print(p)
             nocheater.remove(p)
-  ```
+  #+END_SRC
   
-- [No.954 Result](difficulty2.0/no954.py)  
+** [[./difficulty2.0/no954.py][No.4 おもりと天秤]]
   メモ化再帰でフィボナッチ数列作成
 
 
-# difficulty2.5
-- [No.4 おもりと天秤](difficulty2.5/no4.py)  
+* difficulty2.5
+** [[./difficulty2.5/no4.py][No.4 おもりと天秤]]
   dp 期間が空いたので正直覚えてないがREを連発している  
   コードを見る感じlist out of index関係っぽい？
 
-# difficulty3.0
+* difficulty3.0
